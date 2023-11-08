@@ -6,6 +6,12 @@
 getmail6
 ========
 
+At time of writing Nov 2023, the original fails:-
+File "/usr/local/lib/python3.11/dist-packages/getmailcore/utilities.py", line 62, in
+tostr = lambda lts: lts.decode()
+So I changed the calling line to
+uidvalidity = str(self.conn.response('UIDVALIDITY')[1][0])
+
 getmail6 is a flexible, extensible mail retrieval system with
 support for POP3, IMAP4, SSL variants of both, maildirs, mboxrd files,
 external MDAs, arbitrary message filtering, single-user and domain-mailboxes,
